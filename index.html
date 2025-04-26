@@ -1,0 +1,546 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Violet AI</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 100px 20px 50px;
+}
+
+header h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #00f5a0, #00d9f5);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.feature-section {
+  overflow-x: auto;
+  display: flex;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-card img.feature-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.feature-card h4 {
+  margin: 10px 0;
+  color: #00f5a0;
+}
+
+.feature-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 20px;
+  gap: 30px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #00d9f5;
+}
+
+.price {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #00f5a0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features li {
+  margin: 10px 0;
+}
+
+.qna-section {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.qna-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00d9f5;
+}
+
+.qna {
+  margin-bottom: 20px;
+}
+
+.qna h4 {
+  margin-bottom: 5px;
+  color: #00f5a0;
+}
+
+.qna p {
+  color: #ccc;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+.highlight {
+  color: #00f5a0;
+  text-shadow: 0 0 10px #00f5a0, 0 0 20px #00f5a0, 0 0 30px #00d9f5;
+}
+.qna-content {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ccc;
+}
+
+.qna-toggle {
+  cursor: pointer;
+  margin-bottom: 15px;
+  color: #00f5a0;
+  transition: all 0.3s ease;
+}
+
+.qna-toggle:hover {
+  color: #00d9f5;
+}
+
+.qna-toggle:active {
+  animation: lightning 0.5s ease-out;
+}
+
+@keyframes lightning {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #00f5a0, 0 0 10px #00f5a0, 0 0 15px #00d9f5;
+    box-shadow: 0 0 5px #00f5a0;
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #00f5a0, 0 0 25px #00d9f5;
+    box-shadow: 0 0 15px #00f5a0, 0 0 20px #00d9f5;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.qna-toggle:active + .qna-content {
+  display: block;
+}
+.why-choose-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.why-choose-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  border-radius: 20px;
+  max-width: 700px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #00f5a0;
+}
+
+.why-choose-box h2 {
+  color: #00f5a0;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.why-choose-box p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.why-choose-box:hover {
+  box-shadow: 0 0 30px #00f5a0, 0 0 40px #00d9f5;
+}
+
+@keyframes lightning {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #00f5a0, 0 0 10px #00f5a0, 0 0 15px #00d9f5;
+    box-shadow: 0 0 5px #00f5a0;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px #00f5a0, 0 0 25px #00d9f5;
+    box-shadow: 0 0 15px #00f5a0, 0 0 20px #00d9f5;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.why-choose-box.active {
+  animation: lightning 0.5s ease-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  animation: fadeIn 1s ease-out;
+}
+@keyframes shadowShake {
+  0% { transform: translate(1px, 1px); box-shadow: 0 0 0px #00f5a0; }
+  25% { transform: translate(-2px, 1px); box-shadow: 0 0 10px #00f5a0; }
+  50% { transform: translate(2px, -1px); box-shadow: 0 0 15px #00f5a0; }
+  75% { transform: translate(-1px, 2px); box-shadow: 0 0 10px #00f5a0; }
+  100% { transform: translate(1px, -1px); box-shadow: 0 0 5px #00f5a0; }
+}
+
+.shadow-shake {
+  animation: shadowShake 1.2s infinite;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #00f5a0;
+  border-radius: 50%;
+  animation: particles 0.6s forwards;
+}
+
+@keyframes particles {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-30px);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="particles"></div>
+<header>
+  <h1>Violet <span class="highlight">AI</span></h1>
+  <p class="subheading">Premium WhatsApp Automation Script with <span class="highlight">800+ Powerful Features</span></p>
+</header>  
+
+
+<!-- <section class="feature-section">
+    <div class="feature-card" onclick="alert('Downloader Sosmed selected')">
+      <img class="feature-icon" src="https://img.icons8.com/color/96/download--v1.png" alt="Downloader">
+      <h4>Downloader Sosmed</h4>
+      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Download dari Instagram, TikTok, dll</p>
+    </div>
+    <div class="feature-card" onclick="alert('Play Music / Spotify selected')">
+      <img class="feature-icon" src="https://img.icons8.com/color/96/spotify--v1.png" alt="Spotify">
+      <h4>Play Music / Spotify</h4>
+      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Dengarkan lagu favoritmu</p>
+    </div>
+    <div class="feature-card" onclick="alert('AI Response selected')">
+      <img class="feature-icon" src="https://img.icons8.com/color/96/chatgpt.png" alt="AI Response">
+      <h4>AI Response</h4>
+      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Jawaban pintar dari AI</p>
+    </div>
+    <div class="feature-card" onclick="alert('AI Image Edited selected')">
+      <img class="feature-icon" src="https://img.icons8.com/color/96/edit-image.png" alt="AI Image">
+      <h4>AI Image Edited</h4>
+      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Ubah gambar pakai AI</p>
+    </div>
+  </section> --
+  
+  
+    <!-- Detailed Features -->
+  
+  <section style="padding: 50px 20px; display: flex; justify-content: center;">
+  <div style="display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,170,0.2); padding: 20px 30px; border-radius: 20px; box-shadow: 0 0 15px #00f5a066; max-width: 800px;">
+    <img src="https://files.catbox.moe/8loqb1.jpg" alt="Promo Image" style="width: 120px; height: 120px; border-radius: 15px; object-fit: cover;" />
+    <div>
+      <h3 style="color: #00f5a0; margin: 0 0 10px;">Discount 50%</h3>
+      <p style="margin: 5px 0;">Free update</p>
+      <p style="margin: 5px 0;">Free apikey</p>
+      <button style="margin-top: 10px; padding: 10px 20px; background-color: #00f5a0; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer;">Get Now</button>
+    </div>
+  </div>
+</section>
+<section style="padding: 50px 20px; max-width: 800px; margin: 0 auto;">
+  <h2 style="color: #ffffff; text-align: center;">Informasi Script</h2>
+
+  <ul style="list-style: none; padding: 0; margin-top: 20px;">
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Fitur keamanan tingkat tinggi dengan enkripsi data</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Antarmuka pengguna yang intuitif dan responsif</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Script Type Case X Plugin</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Integrasi dengan berbagai platform dan layanan</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Automated Backup &amp; Restore System</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Optimasi performa untuk kecepatan maksimal</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
+      <span style="font-size: 1rem; color: #ffffff;">Real-time Monitoring &amp; Analytics</span>
+    </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  
+ <!-- <section class="pricing">
+    <div class="card">
+      <h3>Basic</h3>
+      <p class="price">$9/month</p>
+      <ul class="features">
+        <li>5 AI Requests/Day</li>
+        <li>Email Support</li>
+        <li>Basic Features</li>
+      </ul>
+    </div><div class="card">
+  <h3>Pro</h3>
+  <p class="price">$29/month</p>
+  <ul class="features">
+    <li>Unlimited Requests</li>
+    <li>Priority Support</li>
+    <li>Advanced Features</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Enterprise</h3>
+  <p class="price">Contact Us</p>
+  <ul class="features">
+    <li>Custom Solutions</li>
+    <li>Dedicated Manager</li>
+    <li>Full Access</li>
+  </ul>
+</div>
+
+  </section> -->
+  
+  
+  
+<section class="qna-section">
+  <h2>Q & A</h2>
+  <div class="qna-toggle" onclick="toggleQnA(this)">
+    <h4>Bagaimana cara menggunakan Violet AI?</h4>
+  </div>
+  <div class="qna-content">
+    <p>Cukup pilih fitur yang ingin digunakan, dan ikuti petunjuk yang ditampilkan. Semua bisa langsung diakses dari website.</p>
+  </div>
+
+  <div class="qna-toggle" onclick="toggleQnA(this)">
+    <h4>Apakah fitur gratis tersedia?</h4>
+  </div>
+  <div class="qna-content">
+    <p>Ya, paket Basic menyediakan akses terbatas ke fitur-fitur utama secara gratis.</p>
+  </div>
+
+  <div class="qna-toggle" onclick="toggleQnA(this)">
+    <h4>Bagaimana jika saya butuh bantuan teknis?</h4>
+  </div>
+  <div class="qna-content">
+    <p>Kami menyediakan dukungan email dan live chat untuk pengguna Pro dan Enterprise.</p>
+  </div>
+</section>
+
+<section style="padding: 50px 20px; display: flex; justify-content: center;">
+  <div style="position: relative; display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,170,0.2); padding: 20px 30px; border-radius: 20px; box-shadow: 0 0 15px #00f5a066; max-width: 800px;">
+    <img src="https://files.catbox.moe/jhpaeg.png" alt="Promo Image" style="width: 120px; height: 120px; border-radius: 15px; object-fit: cover;" />
+    <div>
+      <h3 style="color: #00f5a0; margin: 0 0 10px;">I'am Violet!</h3>
+      <p style="margin: 5px 0; color: #fff;">Click here to try my feature!</p>
+      <p style="margin: 5px 0; color: #fff;">good luck B*cth!</p>
+      <a href="https://wa.me/628xxxxxxxxxx?text=.menu" target="_blank" onclick="boomParticles(event)">
+        <button class="shadow-shake" style="margin-top: 10px; padding: 10px 20px; background-color: #00f5a0; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" style="width: 20px; height: 20px;" />
+          Let's try!
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <section style="padding: 50px 20px; background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1);">
+  <h2 style="text-align: center; color: #00d9f5;">Apa Kata Mereka</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
+    <div style="max-width: 300px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.08); color: #ccc;">
+      <p>"Violet AI benar-benar mengubah cara saya mengelola bisnis via WhatsApp. Fitur-fiturnya powerful!"</p>
+      <p style="color: #00f5a0; font-weight: bold;">– Reza, Digital Marketer</p>
+    </div>
+    <div style="max-width: 300px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.08); color: #ccc;">
+      <p>"Pelayanan cepat dan sistemnya stabil. Sangat recommended untuk automasi WhatsApp."</p>
+      <p style="color: #00f5a0; font-weight: bold;">– Maya, UMKM Owner</p>
+    </div>
+    <div style="max-width: 300px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.08); color: #ccc;">
+      <p>"Baru pakai seminggu tapi langsung puas. Banyak fitur premium yang nggak ada di bot lain."</p>
+      <p style="color: #00f5a0; font-weight: bold;">– Andre, Freelancer</p>
+    </div>
+  </div>
+
+<footer>
+  &copy; 2025 Violet AI. All rights reserved.
+</footer>
+  <script>
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    document.querySelector('.particles').appendChild(canvas);
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speedX: Math.random() - 0.5,
+        speedY: Math.random() - 0.5,
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 255, 255, 0.7)';
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+    function toggleQnA(element) {
+  const content = element.nextElementSibling;
+  content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+}
+function toggleQnA(element) {
+  const content = element.nextElementSibling;
+  content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+}
+function boomParticles(event) {
+  const button = event.currentTarget.querySelector("button");
+  for (let i = 0; i < 12; i++) {
+    const p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = `${10 + Math.random() * 100}px`;
+    p.style.top = `${10 + Math.random() * 40}px`;
+    p.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    button.appendChild(p);
+    setTimeout(() => p.remove(), 600);
+  }
+}
+  </script></body>
+</html>
