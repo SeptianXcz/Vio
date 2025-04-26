@@ -505,22 +505,30 @@ footer {
   </div>
 </section>
 
-  <section style="padding: 50px 20px; background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1);">
-  <h2 style="text-align: center; color: #00d9f5;">Apa Kata Mereka</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
-    <div style="max-width: 300px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.08); color: #ccc;">
-      <p>"Violet AI benar-benar mengubah cara saya mengelola bisnis via WhatsApp. Fitur-fiturnya powerful!"</p>
-      <p style="color: #00f5a0; font-weight: bold;">– Reza, Digital Marketer</p>
-    </div>
-    <div style="max-width: 300px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.08); color: #ccc;">
-      <p>"Pelayanan cepat dan sistemnya stabil. Sangat recommended untuk automasi WhatsApp."</p>
-      <p style="color: #00f5a0; font-weight: bold;">– Maya, UMKM Owner</p>
-    </div>
-    <div style="max-width: 300px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.08); color: #ccc;">
-      <p>"Baru pakai seminggu tapi langsung puas. Banyak fitur premium yang nggak ada di bot lain."</p>
-      <p style="color: #00f5a0; font-weight: bold;">– Andre, Freelancer</p>
-    </div>
+
+  <section style="padding: 20px 10px;">
+  <h2 style="color: #00f5a0; font-size: 24px; text-align: center;">Testimoni Pengguna</h2>
+  <div id="testimoniList" style="max-width: 500px; margin: 0 auto;">
+    <!-- Testimoni akan ditambahkan di sini -->
   </div>
+</section>
+
+  <section style="padding: 20px 10px; display: flex; justify-content: center;">
+  <div style="text-align: center;">
+    <h2 style="color: #00f5a0; font-size: 20px;">Beri Testimoni Anda</h2>
+    <form id="testimoniForm" style="background-color: rgba(0, 245, 160, 0.08); padding: 16px; border-radius: 10px; width: 240px; margin: 0 auto; box-shadow: 0 0 6px rgba(0,245,160,0.2);">
+      <div style="margin-bottom: 10px;">
+        <input type="text" id="name" placeholder="Nama" style="width: 90%; padding: 5px 8px; border-radius: 4px; border: 1px solid #00f5a0; color: white; background: transparent; font-size: 12px;" required>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <textarea id="message" placeholder="Pesan Anda" rows="3" style="width: 90%; padding: 5px 8px; border-radius: 4px; border: 1px solid #00f5a0; color: white; background: transparent; font-size: 12px;" required></textarea>
+      </div>
+      <button type="submit" style="padding: 6px 12px; background-color: #00f5a0; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+        Kirim
+      </button>
+    </form>
+  </div>
+  </section>
 
 <footer>
   &copy; 2025 Violet AI. All rights reserved.
@@ -597,7 +605,37 @@ function boomParticles(event) {
     }
     audioPlaying = !audioPlaying;
   });
+document.getElementById('testimoniForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
+  // Ambil nilai dari input form
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  // Validasi input
+  if (name && message) {
+    // Membuat elemen baru untuk testimoni
+    const testimonialDiv = document.createElement('div');
+    testimonialDiv.style.padding = '10px';
+    testimonialDiv.style.marginBottom = '15px';
+    testimonialDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+    testimonialDiv.style.borderRadius = '5px';
+
+    // Menambahkan isi dari testimoni
+    testimonialDiv.innerHTML = `
+      <strong style="color: #00f5a0; font-size: 18px;">${name}</strong>
+      <p style="color: #ccc; font-size: 14px;">${message}</p>
+    `;
+
+    // Tambahkan elemen testimoni ke dalam daftar testimoni
+    document.getElementById('testimoniList').appendChild(testimonialDiv);
+
+    // Reset form setelah submit
+    document.getElementById('testimoniForm').reset();
+  } else {
+    alert('Nama dan testimoni harus diisi!');
+  }
+});
     
 </script>
   </script></body>
