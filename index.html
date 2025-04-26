@@ -1,634 +1,462 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Meta OG untuk preview link -->
-  <meta property="og:title" content="I'am Violet" />
-  <meta property="og:description" content="Bot dengan fitur keamanan tinggi, real-time monitoring, dan banyak lagi!" />
-  <meta property="og:image" content="https://files.catbox.moe/yqbaxv.jpg" />
-  <meta property="og:url" content="https://violet-evrbot.vercel.app/" />
-  <meta name="theme-color" content="#00f5a0">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Untuk Twitter (opsional) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="I'am Violet">
-  <meta name="twitter:description" content="Bot dengan fitur keamanan tinggi, real-time monitoring, dan banyak lagi!">
-  <meta name="twitter:image" content="https://files.catbox.moe/yqbaxv.jpg">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Violet AI</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');body {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: white;
-  overflow-x: hidden;
-}
+  <head>
 
-header {
-  text-align: center;
-  padding: 100px 20px 50px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-header h1 {
-  font-size: 3rem;
-  background: linear-gradient(to right, #00f5a0, #00d9f5);
-  -webkit-background-clip: text;
-  color: transparent;
-}
+    <title>Violet Landing Page</title>
 
-.subheading {
-  font-size: 1.2rem;
-  color: #ccc;
-}
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-.particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+<!--
 
-.feature-section {
-  overflow-x: auto;
-  display: flex;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding: 40px 20px;
-  margin: 0 auto;
-}
+TemplateMo 570 Chain App Dev
 
-.feature-card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 250px;
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
+https://templatemo.com/tm-570-chain-app-dev
 
-.feature-card:hover {
-  transform: scale(1.05);
-}
+-->
 
-.feature-card img.feature-icon {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
 
-.feature-card h4 {
-  margin: 10px 0;
-  color: #00f5a0;
-}
+  </head>
 
-.feature-card p {
-  color: #ccc;
-  font-size: 0.9rem;
-}
-
-.pricing {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px 20px;
-  gap: 30px;
-}
-
-.card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 30px;
-  width: 280px;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  color: #00d9f5;
-}
-
-.price {
-  font-size: 2rem;
-  margin: 20px 0;
-  color: #00f5a0;
-}
-
-.features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.features li {
-  margin: 10px 0;
-}
-
-.qna-section {
-  padding: 50px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.qna-section h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #00d9f5;
-}
-
-.qna {
-  margin-bottom: 20px;
-}
-
-.qna h4 {
-  margin-bottom: 5px;
-  color: #00f5a0;
-}
-
-.qna p {
-  color: #ccc;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #888;
-}
-.highlight {
-  color: #00f5a0;
-  text-shadow: 0 0 10px #00f5a0, 0 0 20px #00f5a0, 0 0 30px #00d9f5;
-}
-.qna-content {
-  display: none;
-  margin-top: 10px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: #ccc;
-}
-
-.qna-toggle {
-  cursor: pointer;
-  margin-bottom: 15px;
-  color: #00f5a0;
-  transition: all 0.3s ease;
-}
-
-.qna-toggle:hover {
-  color: #00d9f5;
-}
-
-.qna-toggle:active {
-  animation: lightning 0.5s ease-out;
-}
-
-@keyframes lightning {
-  0% {
-    transform: scale(1);
-    text-shadow: 0 0 5px #00f5a0, 0 0 10px #00f5a0, 0 0 15px #00d9f5;
-    box-shadow: 0 0 5px #00f5a0;
-  }
-  50% {
-    transform: scale(1.1);
-    text-shadow: 0 0 20px #00f5a0, 0 0 25px #00d9f5;
-    box-shadow: 0 0 15px #00f5a0, 0 0 20px #00d9f5;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: none;
-    box-shadow: none;
-  }
-}
-
-.qna-toggle:active + .qna-content {
-  display: block;
-}
-.why-choose-section {
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px;
-}
-
-.why-choose-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px 40px;
-  border-radius: 20px;
-  max-width: 700px;
-  text-align: center;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px #00f5a0;
-}
-
-.why-choose-box h2 {
-  color: #00f5a0;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.why-choose-box p {
-  font-size: 1.2rem;
-  color: #ccc;
-}
-
-.why-choose-box:hover {
-  box-shadow: 0 0 30px #00f5a0, 0 0 40px #00d9f5;
-}
-
-@keyframes lightning {
-  0% {
-    transform: scale(1);
-    text-shadow: 0 0 5px #00f5a0, 0 0 10px #00f5a0, 0 0 15px #00d9f5;
-    box-shadow: 0 0 5px #00f5a0;
-  }
-  50% {
-    transform: scale(1.05);
-    text-shadow: 0 0 20px #00f5a0, 0 0 25px #00d9f5;
-    box-shadow: 0 0 15px #00f5a0, 0 0 20px #00d9f5;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: none;
-    box-shadow: none;
-  }
-}
-
-.why-choose-box.active {
-  animation: lightning 0.5s ease-out;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #888;
-  animation: fadeIn 1s ease-out;
-}
-@keyframes shadowShake {
-  0% { transform: translate(1px, 1px); box-shadow: 0 0 0px #00f5a0; }
-  25% { transform: translate(-2px, 1px); box-shadow: 0 0 10px #00f5a0; }
-  50% { transform: translate(2px, -1px); box-shadow: 0 0 15px #00f5a0; }
-  75% { transform: translate(-1px, 2px); box-shadow: 0 0 10px #00f5a0; }
-  100% { transform: translate(1px, -1px); box-shadow: 0 0 5px #00f5a0; }
-}
-
-.shadow-shake {
-  animation: shadowShake 1.2s infinite;
-}
-
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background-color: #00f5a0;
-  border-radius: 50%;
-  animation: particles 0.6s forwards;
-}
-
-@keyframes particles {
-  0% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5) translateY(-30px);
-  }
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-  </style>
-</head>
 <body>
-<header>
-  <h1>Violet <span class="highlight">AI</span></h1>
-  <p class="subheading">Premium WhatsApp Automation Script with <span class="highlight">800+ Powerful Features</span></p>
-</header>  
-<audio id="bgAudio" loop>
-  <source src="audio/ssstik.io_1744864723140.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
-<button id="audioToggle" style="
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  background: rgba(0, 245, 160, 0.8);
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  z-index: 999;
-">
-  Audio: Off
-</button>
-<!-- <section class="feature-section">
-    <div class="feature-card" onclick="alert('Downloader Sosmed selected')">
-      <img class="feature-icon" src="https://img.icons8.com/color/96/download--v1.png" alt="Downloader">
-      <h4>Downloader Sosmed</h4>
-      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Download dari Instagram, TikTok, dll</p>
-    </div>
-    <div class="feature-card" onclick="alert('Play Music / Spotify selected')">
-      <img class="feature-icon" src="https://img.icons8.com/color/96/spotify--v1.png" alt="Spotify">
-      <h4>Play Music / Spotify</h4>
-      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Dengarkan lagu favoritmu</p>
-    </div>
-    <div class="feature-card" onclick="alert('AI Response selected')">
-      <img class="feature-icon" src="https://img.icons8.com/color/96/chatgpt.png" alt="AI Response">
-      <h4>AI Response</h4>
-      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Jawaban pintar dari AI</p>
-    </div>
-    <div class="feature-card" onclick="alert('AI Image Edited selected')">
-      <img class="feature-icon" src="https://img.icons8.com/color/96/edit-image.png" alt="AI Image">
-      <h4>AI Image Edited</h4>
-      <p><img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16"/> Ubah gambar pakai AI</p>
-    </div>
-  </section> --
-  
-  
-    <!-- Detailed Features -->
-  
-<section style="padding: 50px 20px; display: flex; justify-content: center;">
-  <div style="position: relative; display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,170,0.2); padding: 20px 30px; border-radius: 20px; box-shadow: 0 0 15px #00f5a066; max-width: 800px;">
-    <img src="https://files.catbox.moe/8loqb1.jpg" alt="Promo Image" style="width: 120px; height: 120px; border-radius: 15px; object-fit: cover;" />
-    <div>
-      <h3 style="color: #00f5a0; margin: 0 0 10px;">Discount 50%</h3>
-      <p style="margin: 5px 0; color: #fff;">Free update</p>
-      <p style="margin: 5px 0; color: #fff;">Free apikey</p>
-      <a href="https://wa.me/6283130303343?text=hi" target="_blank" onclick="boomParticles(event)"
-         style="margin-top: 10px; padding: 10px 20px; background-color: #00f5a0; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 0 10px #00f5a055; transition: transform 0.2s ease;">
-        <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" style="width: 20px; height: 20px;" />
-        Let's try!
-      </a>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </div>
-</section>
-<section style="padding: 50px 20px; max-width: 800px; margin: 0 auto;">
-  <h2 style="color: #ffffff; text-align: center;">Informasi Script</h2>
+  <!-- ***** Preloader End ***** -->
 
-  <ul style="list-style: none; padding: 0; margin-top: 20px;">
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Fitur keamanan tingkat tinggi dengan enkripsi data</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Antarmuka pengguna yang intuitif dan responsif</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Script Type Case X Plugin</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Integrasi dengan berbagai platform dan layanan</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Automated Backup &amp; Restore System</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Optimasi performa untuk kecepatan maksimal</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 15px;">
-      <img src="https://img.icons8.com/?size=32&id=98A4yZTt9abw&format=png" width="16" height="16" style="vertical-align: middle; margin-right: 10px;"/>
-      <span style="font-size: 1rem; color: #ffffff;">Real-time Monitoring &amp; Analytics</span>
-    </li>
-  </ul>
-</section>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="Violet">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#about">QnA</a></li>
+              <li class="scroll-to-section"><a href="https://chat.whatsapp.com/KVzJqLUGhpu1M4KBzsB9sg">Group Chat</a></li>
+              <li class="scroll-to-section"><a href="https://whatsapp.com/channel/0029VbADOB29MF93JBy0oV06">Channel Info</a></li>
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
   
-  
-  
-  
-  
- <!-- <section class="pricing">
-    <div class="card">
-      <h3>Basic</h3>
-      <p class="price">$9/month</p>
-      <ul class="features">
-        <li>5 AI Requests/Day</li>
-        <li>Email Support</li>
-        <li>Basic Features</li>
-      </ul>
-    </div><div class="card">
-  <h3>Pro</h3>
-  <p class="price">$29/month</p>
-  <ul class="features">
-    <li>Unlimited Requests</li>
-    <li>Priority Support</li>
-    <li>Advanced Features</li>
-  </ul>
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+       <div class="social_login">
+            <div class="">
+                <a href="#" class="social_box fb">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+
+                </a>
+
+                <a href="#" class="social_box google">
+                    <span class="icon"><i class="fab fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>
+
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+            </div>
+        </div>
+
+   <!-- Username & Password Login form -->
+            <div class="user_login">
+            <form>
+                <label>Email / Username</label>
+                <input type="text" />
+                <br />
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox" />
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">Forgot password?</a>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register">
+            <form>
+                <label>Full Name</label>
+                <input type="text" />
+                <br />
+                <label>Email Address</label>
+                <input type="email" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox" />
+                    <label for="send_updates">Send me occasional email updates</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
 </div>
 
-<div class="card">
-  <h3>Enterprise</h3>
-  <p class="price">Contact Us</p>
-  <ul class="features">
-    <li>Custom Solutions</li>
-    <li>Dedicated Manager</li>
-    <li>Full Access</li>
-  </ul>
-</div>
-
-  </section> -->
-  
-  
-  
-<section class="qna-section">
-  <h2>Q & A</h2>
-  <div class="qna-toggle" onclick="toggleQnA(this)">
-    <h4>Apa itu Violet MD Bot?</h4>
-  </div>
-  <div class="qna-content">
-    <p>Violet MD Bot adalah script automasi WhatsApp premium dengan lebih dari 800 fitur yang dapat meningkatkan efisiensi dan interaksi bisnis Anda.</p>
-  </div>
-
-  <div class="qna-toggle" onclick="toggleQnA(this)">
-    <h4>Apakah fitur gratis tersedia?</h4>
-  </div>
-  <div class="qna-content">
-    <p>Ya, paket Basic menyediakan akses terbatas ke fitur-fitur utama secara gratis.</p>
-  </div>
-
-  <div class="qna-toggle" onclick="toggleQnA(this)">
-    <h4>Apakah saya mendapatkan update gratis?</h4>
-  </div>
-  <div class="qna-content">
-    <p>Ya, setiap pembelian Violet MD Bot dilengkapi dengan update gratis seumur hidup..</p>
-  </div>
-  <div class="qna-toggle" onclick="toggleQnA(this)">
-    <h4>Bagaimana jika saya butuh bantuan teknis?</h4>
-  </div>
-  <div class="qna-content">
-    <p>Kami menyediakan dukungan email dan live chat untuk pengguna Pro dan Enterprise.</p>
-  </div>
-</section>
-
-<section style="padding: 50px 20px; display: flex; justify-content: center;">
-  <div style="position: relative; display: flex; align-items: center; gap: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,255,170,0.2); padding: 20px 30px; border-radius: 20px; box-shadow: 0 0 15px #00f5a066; max-width: 800px;">
-    <img src="https://files.catbox.moe/jhpaeg.png" alt="Promo Image" style="width: 120px; height: 120px; border-radius: 15px; object-fit: cover;" />
-    <div>
-      <h3 style="color: #00f5a0; margin: 0 0 10px;">I'am Violet!</h3>
-      <p style="margin: 5px 0; color: #fff;">Click here to try my feature!</p>
-      <p style="margin: 5px 0; color: #fff;">good luck B*cth!</p>
-      <a href="https://wa.me/6281324217842?text=.menu" target="_blank" onclick="boomParticles(event)"
-         style="margin-top: 10px; padding: 10px 20px; background-color: #00f5a0; color: #000; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 0 10px #00f5a055; transition: transform 0.2s ease;">
-        <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" style="width: 20px; height: 20px;" />
-        Let's try!
-      </a>
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Violet Ai | Bot WhatsApp</h2>
+                    <p>Violet MD Bot adalah script automasi WhatsApp premium dengan lebih dari 800 fitur yang dapat meningkatkan efisiensi dan interaksi bisnis Anda.</p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="https://wa.me/6283130303343">WhatsApp Owner <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="white-button scroll-to-section">
+                      <a href="https://wa.me/6281324217842">WhatsApp Bot <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/slider-dec.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-
-  <!-- <section style="padding: 20px 10px;">
-  <h2 style="color: #00f5a0; font-size: 24px; text-align: center;">Testimoni Pengguna</h2>
-  <div id="testimoniList" style="max-width: 500px; margin: 0 auto;">
-    <!-- Testimoni akan ditambahkan di sini 
-  </div>
-</section>
-
-<section style="padding: 20px 10px; display: flex; justify-content: center;">
-  <div style="text-align: center;">
-    <h2 style="color: #00f5a0; font-size: 20px;">Beri Testimoni Anda</h2>
-    <form id="testimoniForm" style="background-color: rgba(0, 245, 160, 0.08); padding: 16px; border-radius: 10px; width: 240px; margin: 0 auto; box-shadow: 0 0 6px rgba(0,245,160,0.2);">
-      <div style="margin-bottom: 10px;">
-        <input type="text" id="name" placeholder="Nama" style="width: 90%; padding: 5px 8px; border-radius: 4px; border: 1px solid #00f5a0; color: white; background: transparent; font-size: 12px;" required>
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Why<em> Choose &amp; Violet</em> Ai</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Premium features that will supercharge your <a rel="nofollow" href="https://wa.me/6283130303343" target="_blank">WhatsApp</a> & <a href="https://wa.me/6283130303343" target="_parent">our contact page</a> for more information.</p>
+          </div>
+        </div>
       </div>
-      <div style="margin-bottom: 10px;">
-        <textarea id="message" placeholder="Pesan Anda" rows="3" style="width: 90%; padding: 5px 8px; border-radius: 4px; border: 1px solid #00f5a0; color: white; background: transparent; font-size: 12px;" required></textarea>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"></div>
+            <h4>Privacy & Policy</h4>
+            <p>Fitur keamanan tingkat tinggi dengan enkripsi data. Antarmuka pengguna yang intuitif dan responsif dan Script ini dilengkapi dengan Type Case X Plugin</p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+                <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"></div>
+            <h4>Rocket Speed</h4>
+            <p>Antarmuka pengguna yang intuitif dan responsif, Optimasi performa untuk kecepatan maksimal</p>
+            <div class="text-button">
+              <a href="https://wa.me/6283130303343">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item third-service">
+            <div class="icon"></div>
+            <h4>Multi Workflow Idea</h4>
+            <p>Real-time<a rel="nofollow" href="https://wa.me/6283130303343" target="_blank"> Monitoring & Analytics</a> Automated Backup & Restore System</p>
+            <div class="text-button">
+              <a href="https://wa.me/6283130303343">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item fourth-service">
+            <div class="icon"></div>
+            <h4>24/7 Help &amp; Support</h4>
+            <p>Kami menyediakan dukungan email dan live chat untuk pengguna Pro dan Enterprise.</p>
+            <div class="text-button">
+              <a href="https://wa.me/6283130303343">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <button type="submit" style="padding: 6px 12px; background-color: #00f5a0; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
-        Kirim
-      </button>
-    </form>
-    <div id="testimoniList"></div>
+    </div>
   </div>
-</section> -->
 
-<footer>
-  &copy; 2025 Violet AI. All rights reserved.
-</footer>
-  <script>
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    document.querySelector('.particles').appendChild(canvas);
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h4>Frequently<em> Asked</em> &amp; Questions</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>-->
+          </div>
+                    <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Apa itu Violet Ai?</a></h4>
+                <p>Violet Bot adalah script automasi WhatsApp premium dengan lebih dari 800 fitur.</p>
+              </div>
+            </div>
+            <!-- <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Apakah saya mendapatkan update gratis?</a></h4>
+                <p>Ya, setiap pembelian Nova MD Bot dilengkapi dengan update gratis seumur hidup.</p>
+              </div>
+            </div>
+            
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Bagaimana dengan dukungan teknis?</a></h4>
+                <p>Kami menyediakan dukungan 24/7 serta pemeliharaan rutin untuk memastikan Nova MD Bot selalu berjalan optimal.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">24/7 Support &amp; Help</a></h4>
+                <p>Kontak kami akan selalu merespon para pengguna untuk kebutuhan kalian!</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Fixing Issues About</a></h4>
+                <p>Fix Apikey / Premium Apikey & Scrape</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Development</a></h4>
+                <p>Akan di bantu oleh developer asli pengembang Violet, dengan code yang sudah fix dan siap di gunakan</p>
+              </div>
+            </div>-->
+            <div class="col-lg-12">
+              <p>Jika Anda memiliki pertanyaan yang belum terjawab, jangan ragu untuk menghubungi kami atau mengajukan pertanyaan melalui formulir yang tersedia. Kami siap membantu Anda!</p>
+              <!--<div class="gradient-button">
+                <a href="#">Start 14-Day Free Trial</a>
+              </div>
+              <span>*No Credit Card Required</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="assets/images/about-right-dec.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>+)
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
-        speedX: Math.random() - 0.5,
-        speedY: Math.random() - 0.5,
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.x += p.speedX;
-        p.y += p.speedY;
-
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 255, 255, 0.7)';
-        ctx.fill();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-    function toggleQnA(element) {
-  const content = element.nextElementSibling;
-  content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
-}
-function toggleQnA(element) {
-  const content = element.nextElementSibling;
-  content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
-}
-function boomParticles(event) {
-  const button = event.currentTarget.querySelector("button");
-  for (let i = 0; i < 12; i++) {
-    const p = document.createElement("div");
-    p.className = "particle";
-    p.style.left = `${10 + Math.random() * 100}px`;
-    p.style.top = `${10 + Math.random() * 40}px`;
-    p.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-    button.appendChild(p);
-    setTimeout(() => p.remove(), 600);
-  }
-}
-  const audio = document.getElementById("bgAudio");
-  const toggleBtn = document.getElementById("audioToggle");
-  let audioPlaying = false;
-
-  toggleBtn.addEventListener("click", () => {
-    if (audioPlaying) {
-      audio.pause();
-      toggleBtn.textContent = "Audio: Off";
-    } else {
-      audio.play().catch(e => console.log("Autoplay error:", e));
-      toggleBtn.textContent = "Audio: On";
-    }
-    audioPlaying = !audioPlaying;
-  });
-document.getElementById('testimoniForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  // Ambil nilai dari input form
-  const name = document.getElementById('name').value;
-  const message = document.getElementById('message').value;
-
-  // Validasi input
-  if (name && message) {
-    // Membuat objek testimoni
-    const testimonial = { name, message };
-
-    // Ambil data testimoni yang sudah ada dari LocalStorage
-    let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-
-    // Menambahkan testimoni baru
-    testimonials.push(testimonial);
-
-    // Simpan kembali ke LocalStorage
-    localStorage.setItem('testimonials', JSON.stringify(testimonials));
-
-    // Membuat elemen baru untuk testimoni
+  <div id="clients" class="the-clients">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Check What <em>The Clients Say</em> About Our App Dev</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-7 align-self-center">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>David Martino Co</h4>
+                            <span class="date">30 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Financial Apps</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.8</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Jake Harris Nyo</h4>
+                            <span class="date">29 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Digital Business</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.5</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>May Catherina</h4>
+                            <span class="date">27 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Business &amp; Economics</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.7</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Random User</h4>
+                            <span class="date">24 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">New App Ecosystem</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">3.9</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Mark Amber Do</h4>
+                            <span class="date">21 November 2021</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Web Development</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.3</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-5">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
+                                  lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/client-image.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>David Martino</h4>
+                        
