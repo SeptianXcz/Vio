@@ -312,8 +312,25 @@ footer {
   <h1>Violet <span class="highlight">AI</span></h1>
   <p class="subheading">Premium WhatsApp Automation Script with <span class="highlight">800+ Powerful Features</span></p>
 </header>  
-
-
+<audio id="bgAudio" loop>
+  <source src="audio/namafile.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<button id="audioToggle" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: rgba(0, 245, 160, 0.8);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 999;
+">
+  Audio: Off
+</button>
 <!-- <section class="feature-section">
     <div class="feature-card" onclick="alert('Downloader Sosmed selected')">
       <img class="feature-icon" src="https://img.icons8.com/color/96/download--v1.png" alt="Downloader">
@@ -545,5 +562,21 @@ function boomParticles(event) {
     setTimeout(() => p.remove(), 600);
   }
 }
+    <script>
+  const audio = document.getElementById("bgAudio");
+  const toggleBtn = document.getElementById("audioToggle");
+  let audioPlaying = false;
+
+  toggleBtn.addEventListener("click", () => {
+    if (audioPlaying) {
+      audio.pause();
+      toggleBtn.textContent = "Audio: Off";
+    } else {
+      audio.play().catch(e => console.log("Autoplay error:", e));
+      toggleBtn.textContent = "Audio: On";
+    }
+    audioPlaying = !audioPlaying;
+  });
+</script>
   </script></body>
 </html>
