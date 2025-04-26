@@ -513,7 +513,7 @@ footer {
   </div>
 </section>
 
-  <section style="padding: 20px 10px; display: flex; justify-content: center;">
+<section style="padding: 20px 10px; display: flex; justify-content: center;">
   <div style="text-align: center;">
     <h2 style="color: #00f5a0; font-size: 20px;">Beri Testimoni Anda</h2>
     <form id="testimoniForm" style="background-color: rgba(0, 245, 160, 0.08); padding: 16px; border-radius: 10px; width: 240px; margin: 0 auto; box-shadow: 0 0 6px rgba(0,245,160,0.2);">
@@ -527,8 +527,9 @@ footer {
         Kirim
       </button>
     </form>
+    <div id="testimoniList"></div>
   </div>
-  </section>
+</section>
 
 <footer>
   &copy; 2025 Violet AI. All rights reserved.
@@ -614,14 +615,24 @@ document.getElementById('testimoniForm').addEventListener('submit', function(eve
 
   // Validasi input
   if (name && message) {
+    // Membuat objek testimoni
+    const testimonial = { name, message };
+
+    // Ambil data testimoni yang sudah ada dari LocalStorage
+    let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+
+    // Menambahkan testimoni baru
+    testimonials.push(testimonial);
+
+    // Simpan kembali ke LocalStorage
+    localStorage.setItem('testimonials', JSON.stringify(testimonials));
+
     // Membuat elemen baru untuk testimoni
     const testimonialDiv = document.createElement('div');
     testimonialDiv.style.padding = '10px';
     testimonialDiv.style.marginBottom = '15px';
     testimonialDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
     testimonialDiv.style.borderRadius = '5px';
-
-    // Menambahkan isi dari testimoni
     testimonialDiv.innerHTML = `
       <strong style="color: #00f5a0; font-size: 18px;">${name}</strong>
       <p style="color: #ccc; font-size: 14px;">${message}</p>
@@ -636,6 +647,23 @@ document.getElementById('testimoniForm').addEventListener('submit', function(eve
     alert('Nama dan testimoni harus diisi!');
   }
 });
+
+// Memuat testimoni yang sudah ada saat halaman dimuat
+window.onload = function() {
+  let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+  testimonials.forEach(testimonial => {
+    const testimonialDiv = document.createElement('div');
+    testimonialDiv.style.padding = '10px';
+    testimonialDiv.style.marginBottom = '15px';
+    testimonialDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+    testimonialDiv.style.borderRadius = '5px';
+    testimonialDiv.innerHTML = `
+      <strong style="color: #00f5a0; font-size: 18px;">${testimonial.name}</strong>
+      <p style="color: #ccc; font-size: 14px;">${testimonial.message}</p>
+    `;
+    document.getElementById('testimoniList').appendChild(testimonialDiv);
+  });
+};
     
 </script>
   </script></body>
