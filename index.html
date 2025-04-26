@@ -319,10 +319,29 @@ footer {
     transform: scale(1.5) translateY(-30px);
   }
 }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
   </style>
 </head>
 <body>
   <div class="particles"></div>
+  <div id="musicLogo" style="
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  background-image: url('https://img.icons8.com/ios-filled/100/ffffff/vinyl.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+  animation-play-state: paused;
+  opacity: 0.8;
+  z-index: 999;
+"></div>
 <header>
   <h1>Violet <span class="highlight">AI</span></h1>
   <p class="subheading">Premium WhatsApp Automation Script with <span class="highlight">800+ Powerful Features</span></p>
@@ -331,6 +350,7 @@ footer {
   <source src="audio/ssstik.io_1744864723140.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
 <button id="audioToggle" style="
   position: fixed;
   top: 20px;
@@ -615,56 +635,4 @@ document.getElementById('testimoniForm').addEventListener('submit', function(eve
 
   // Validasi input
   if (name && message) {
-    // Membuat objek testimoni
-    const testimonial = { name, message };
-
-    // Ambil data testimoni yang sudah ada dari LocalStorage
-    let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-
-    // Menambahkan testimoni baru
-    testimonials.push(testimonial);
-
-    // Simpan kembali ke LocalStorage
-    localStorage.setItem('testimonials', JSON.stringify(testimonials));
-
-    // Membuat elemen baru untuk testimoni
-    const testimonialDiv = document.createElement('div');
-    testimonialDiv.style.padding = '10px';
-    testimonialDiv.style.marginBottom = '15px';
-    testimonialDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-    testimonialDiv.style.borderRadius = '5px';
-    testimonialDiv.innerHTML = `
-      <strong style="color: #00f5a0; font-size: 18px;">${name}</strong>
-      <p style="color: #ccc; font-size: 14px;">${message}</p>
-    `;
-
-    // Tambahkan elemen testimoni ke dalam daftar testimoni
-    document.getElementById('testimoniList').appendChild(testimonialDiv);
-
-    // Reset form setelah submit
-    document.getElementById('testimoniForm').reset();
-  } else {
-    alert('Nama dan testimoni harus diisi!');
-  }
-});
-
-// Memuat testimoni yang sudah ada saat halaman dimuat
-window.onload = function() {
-  let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
-  testimonials.forEach(testimonial => {
-    const testimonialDiv = document.createElement('div');
-    testimonialDiv.style.padding = '10px';
-    testimonialDiv.style.marginBottom = '15px';
-    testimonialDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-    testimonialDiv.style.borderRadius = '5px';
-    testimonialDiv.innerHTML = `
-      <strong style="color: #00f5a0; font-size: 18px;">${testimonial.name}</strong>
-      <p style="color: #ccc; font-size: 14px;">${testimonial.message}</p>
-    `;
-    document.getElementById('testimoniList').appendChild(testimonialDiv);
-  });
-};
-    
-</script>
-  </script></body>
-</html>
+    // Membuat objek test
