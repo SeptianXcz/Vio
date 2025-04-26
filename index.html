@@ -326,22 +326,6 @@ footer {
   </style>
 </head>
 <body>
-  <div class="particles"></div>
-  <div id="musicLogo" style="
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 80px;
-  height: 80px;
-  background-image: url('https://img.icons8.com/ios-filled/100/ffffff/vinyl.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  animation: spin 4s linear infinite;
-  animation-play-state: paused;
-  opacity: 0.8;
-  z-index: 999;
-"></div>
 <header>
   <h1>Violet <span class="highlight">AI</span></h1>
   <p class="subheading">Premium WhatsApp Automation Script with <span class="highlight">800+ Powerful Features</span></p>
@@ -635,4 +619,16 @@ document.getElementById('testimoniForm').addEventListener('submit', function(eve
 
   // Validasi input
   if (name && message) {
-    // Membuat objek test
+    // Membuat objek testimoni
+    const testimonial = { name, message };
+
+    // Ambil data testimoni yang sudah ada dari LocalStorage
+    let testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+
+    // Menambahkan testimoni baru
+    testimonials.push(testimonial);
+
+    // Simpan kembali ke LocalStorage
+    localStorage.setItem('testimonials', JSON.stringify(testimonials));
+
+    // Membuat elemen baru untuk testimoni
